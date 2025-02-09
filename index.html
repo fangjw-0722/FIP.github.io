@@ -25,8 +25,8 @@
             <h1 class="title is-1 publication-title">FIP: Endowing Robust Motion Capture on Daily Garment by Fusing Flex and Inertial Sensors</h1>
             <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                <a href="https://keunhong.com">Ruonan Zheng</a><sup>1</sup>,
-                <a href="https://utkarshsinha.com">Jiawei Fang</a><sup>2</sup>
+                <a href="https://keunhong.com">Ruonan Zheng*</a><sup>1</sup>,
+                <a href="https://utkarshsinha.com">Jiawei Fang*</a><sup>2</sup>
                 </span>
             </div>
             <div class="is-size-5 publication-authors">
@@ -38,6 +38,7 @@
                 <a href="http://www.ricardomartinbrualla.com">Yiyue Luo</a><sup>2</sup>
                 </span>
             </div>
+            <p class="is-size-7 has-text-centered">* Equal contribution</p>
             <div class="column has-text-centered">
                 <div class="publication-links">
                 <span class="link-block">
@@ -114,7 +115,24 @@
   </section>
 
 
-
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Algorithm</h2>
+      <div class="content has-text-justified">
+        <p>
+          FIP's motion capture algorithm consists of three core modules:
+        </p>
+        <ul>
+          <li><strong>Displacement Latent Diffusion Model:</strong> This module synthesizes sensor displacement in various conditions, addressing real-time displacement of IMUs through a generative AI-based approach.</li>
+          <li><strong>Physics-informed Calibrator:</strong> A calibration mechanism that registers flex sensor data under different wearing conditions, compensating for primary displacement effects.</li>
+          <li><strong>Pose Fusion Predictor:</strong> A multi-modal fusion network that integrates readings from both IMUs and flex sensors to estimate accurate body postures.</li>
+        </ul>
+        <p>
+          These components work in synergy to enhance robustness, ensuring precise motion tracking even in loose-fitting garments.
+        </p>
+      </div>
+    </div>
+  </section>
 
 
 
