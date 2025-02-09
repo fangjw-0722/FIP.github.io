@@ -131,28 +131,33 @@
 <!-- algorithm -->
 
 
-  <section class="section">
+<section class="section">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-      <h2 class="title is-3">Algorithm</h2>
-      <div class="content has-text-justified">
-        <p>
-          FIP's motion capture algorithm consists of three core modules:
-        </p>
-        <ul>
-          <li><strong>Displacement Latent Diffusion Model:</strong> This module synthesizes sensor displacement in various conditions, addressing real-time displacement of IMUs through a generative AI-based approach.</li>
-          <li><strong>Physics-informed Calibrator:</strong> A calibration mechanism that registers flex sensor data under different wearing conditions, compensating for primary displacement effects.</li>
-          <li><strong>Pose Fusion Predictor:</strong> A multi-modal fusion network that integrates readings from both IMUs and flex sensors to estimate accurate body postures.</li>
-        </ul>
-        <p>
-          These components work in synergy to enhance robustness, ensuring precise motion tracking even in loose-fitting garments.
-        </p>
-            </div>
+                <h2 class="title is-3">Algorithm</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        FIP's motion capture algorithm consists of three core modules:
+                    </p>
+                    <ul>
+                        <li><strong>Displacement Latent Diffusion Model:</strong> This module synthesizes sensor displacement in various conditions, addressing real-time displacement of IMUs through a generative AI-based approach.</li>
+                        <li><strong>Physics-informed Calibrator:</strong> A calibration mechanism that registers flex sensor data under different wearing conditions, compensating for primary displacement effects.</li>
+                        <li><strong>Pose Fusion Predictor:</strong> A multi-modal fusion network that integrates readings from both IMUs and flex sensors to estimate accurate body postures.</li>
+                    </ul>
+                    <p>
+                        These components work in synergy to enhance robustness, ensuring precise motion tracking even in loose-fitting garments.
+                    </p>
+                </div>
+                <div class="has-text-centered">
+                    <img src="./static/images/Fig_pipeline4.png" alt="Pipeline Overview" style="width:100%;">
+                    <p><em>Pipeline Overview. Left: For data preparation, we first utilize a simulation body-fabric model to synthesize the IMU <strong>Real-time Displacement</strong>. Then, for training a robust pose predictor, we train a Displacement Latent Diffusion Model (DLDM) to generate enough diverse data that covers real-world distribution. At last, we train a Pose Fusion Predictor leveraging simulated flex sensor data and generated IMU data, with the supervision of SMPL Pose. Right: In our testing phase, flex sensor readings will be first input to our Physical-informed Calibrator to address the <strong>Primary Displacement</strong>, which will be input to the pre-trained Pose Fusion Predictor with IMU data.</em></p>
+                </div>
             </div>
         </div>
-        </div>
-  </section>
+    </div>
+</section>
+
 
 
 
@@ -161,9 +166,11 @@
     <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
         <h2 class="title is-3">Performance</h2>
+        <div class="has-text-centered">
             <img src="./static/images/Fig_vis.jpg" alt="Qualitative results visualization" style="width:100%;">
             <p><em>Qualitative results: our approach outperforms all SOTA methods in motion capture with a clear advantage in elbow joint tracking.</em></p>
         </div>
+        <div class="content has-text-justified">
         <p>
             Our FIP system achieves state-of-the-art motion capture performance by significantly reducing tracking errors. Key evaluation metrics include:
             </p>
